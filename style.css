@@ -30,23 +30,23 @@ nav {
   justify-content: space-between;
 }
 
-/* --- Hamburger Menu (มือถือ) --- */
+/* Hamburger Menu */
 .hamburger {
-  display: none; /* ซ่อนบน Desktop */
+  display: none;
   font-size: 1.8rem;
   color: white;
   cursor: pointer;
   z-index: 1001;
 }
 
-/* โลโก้ */
+/* Logo */
 .logo a img {
   padding-top: 15%;
   width: 120px;
   height: auto;
 }
 
-/* ===== Menu ===== */
+/* Menu */
 .menu {
   display: flex;
   list-style: none;
@@ -68,7 +68,7 @@ nav {
   opacity: 0.8;
 }
 
-/* ===== Search + Favorite + Profile ===== */
+/* Search + Favorite + Profile */
 .search-favorite {
   display: flex;
   align-items: center;
@@ -105,7 +105,7 @@ nav {
   opacity: 1;
 }
 
-.favorite-bar-icon {
+.favorite-bar-icon, .profile-icon {
   font-size: 1.5rem;
   color: white;
   cursor: pointer;
@@ -116,18 +116,11 @@ nav {
   color: orange;
 }
 
-.profile-icon {
-  font-size: 1.5rem;
-  color: white;
-  cursor: pointer;
-  transition: color 0.2s;
-}
-
 .profile-icon:hover {
   color: #ffd580;
 }
 
-/* ===== Content ===== */
+/* Content */
 .content {
   padding: 50px 0;
 }
@@ -144,15 +137,15 @@ nav {
   margin-bottom: 30px;
 }
 
-/* Grid แสดงสินค้า 3 คอลัมน์บน Desktop */
+/* Grid Products */
 .content-con {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* ใช้เต็มพื้นที่ */
-  gap: 45px; /* ลดระยะห่างระหว่างคอลัมน์ */
+  grid-template-columns: repeat(3, 1fr);
+  gap: 45px;
   justify-content: center;
 }
 
-/* ===== Product Item ===== */
+/* Product Card */
 .content-item {
   position: relative;
   background: white;
@@ -160,7 +153,7 @@ nav {
   padding: 15px;
   width: 100%;
   height: auto;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
   transition: transform 0.2s, box-shadow 0.2s;
   display: flex;
   flex-direction: column;
@@ -169,7 +162,7 @@ nav {
 
 .content-item:hover {
   transform: translateY(-5px);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.1);
 }
 
 .content-item img {
@@ -239,15 +232,12 @@ nav {
   color: #f97316;
 }
 
-/* ===== Responsive (มือถือ) ===== */
+/* Responsive */
 @media (max-width: 768px) {
-
   .hamburger {
     display: block;
   }
-
   .menu {
-    display: flex;
     flex-direction: column;
     background-color: #ffffff;
     color: #f97316;
@@ -262,27 +252,57 @@ nav {
     z-index: 1000;
     box-shadow: 4px 0 15px rgba(0, 0, 0, 0.1);
   }
-
   .menu.active {
     left: 0;
   }
-
   .menu li {
     margin-bottom: 20px;
   }
-
   .menu li a {
     color: #f97316;
     font-size: 1.2rem;
     font-weight: 600;
   }
-
   .menu li a:hover {
     color: #fb923c;
   }
-
   .content-con {
     grid-template-columns: repeat(2, 1fr);
-    gap: 8px; /* ลดระยะห่างบนมือถือ */
+    gap: 8px;
   }
+}
+
+/* 404 Page */
+.notfound-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #fff7f0;
+  color: #f97316;
+  text-align: center;
+}
+
+.notfound-container h1 {
+  font-size: 6rem;
+  margin-bottom: 20px;
+}
+
+.notfound-container p {
+  font-size: 1.5rem;
+  margin-bottom: 30px;
+}
+
+.notfound-container a {
+  text-decoration: none;
+  color: white;
+  background-color: #f97316;
+  padding: 10px 20px;
+  border-radius: 30px;
+  transition: 0.2s;
+}
+
+.notfound-container a:hover {
+  background-color: #fb923c;
 }

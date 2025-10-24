@@ -48,3 +48,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
   fetchProducts();
 });
+
+item.innerHTML = `
+  <i class="fa-solid fa-heart favorite-icon"></i>
+  <img src="${product.image}" alt="${product.title}">
+  <h4>${product.title}</h4>
+  <p>${product.description.substring(0, 60)}...</p>
+  <div class="bottom-row">
+    <a href="404.html" class="content-btn">View Product</a>
+    <span class="price">$${product.price}</span>
+  </div>
+`;
