@@ -1,0 +1,288 @@
+/* ===== Reset & Base ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Prompt", "Kanit", sans-serif;
+}
+
+body {
+  background-color: #fff7f0;
+  color: #333;
+}
+
+/* ===== Navigation ===== */
+nav {
+  background-color: #f97316;
+  padding: 10px 0;
+  color: white;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.container {
+  width: 85%;
+  margin: 0 auto;
+}
+
+.nav-con {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* --- Hamburger Menu (มือถือ) --- */
+.hamburger {
+  display: none; /* ซ่อนบน Desktop */
+  font-size: 1.8rem;
+  color: white;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+/* โลโก้ */
+.logo a img {
+  padding-top: 15%;
+  width: 120px;
+  height: auto;
+}
+
+/* ===== Menu ===== */
+.menu {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+  justify-content: center;
+  flex: 1;
+  transition: left 0.4s ease;
+}
+
+.menu li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1rem;
+  transition: 0.2s;
+}
+
+.menu li a:hover {
+  opacity: 0.8;
+}
+
+/* ===== Search + Favorite + Profile ===== */
+.search-favorite {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.search-wrapper {
+  position: relative;
+}
+
+.search-icon {
+  font-size: 1.5rem;
+  color: white;
+  cursor: pointer;
+}
+
+.search-input {
+  position: absolute;
+  right: -5px;
+  top: -5px;
+  width: 0;
+  padding: 10px 16px;
+  border: 2px solid #f97316;
+  border-radius: 25px;
+  outline: none;
+  font-size: 1rem;
+  opacity: 0;
+  transition: width 0.3s ease, opacity 0.3s ease;
+  z-index: 10;
+}
+
+.search-wrapper:hover .search-input {
+  width: 180px;
+  opacity: 1;
+}
+
+.favorite-bar-icon {
+  font-size: 1.5rem;
+  color: white;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.favorite-bar-icon:hover {
+  color: orange;
+}
+
+.profile-icon {
+  font-size: 1.5rem;
+  color: white;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.profile-icon:hover {
+  color: #ffd580;
+}
+
+/* ===== Content ===== */
+.content {
+  padding: 50px 0;
+}
+
+.content-title h3 {
+  color: #f97316;
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.item-count {
+  color: #666;
+  font-size: 1rem;
+  margin-bottom: 30px;
+}
+
+/* Grid แสดงสินค้า 3 คอลัมน์บน Desktop */
+.content-con {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* ใช้เต็มพื้นที่ */
+  gap: 45px; /* ลดระยะห่างระหว่างคอลัมน์ */
+  justify-content: center;
+}
+
+/* ===== Product Item ===== */
+.content-item {
+  position: relative;
+  background: white;
+  border-radius: 20px;
+  padding: 15px;
+  width: 100%;
+  height: auto;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s, box-shadow 0.2s;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.content-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+}
+
+.content-item img {
+  width: 100%;
+  height: 250px;
+  object-fit: contain;
+  border-radius: 16px;
+  margin-bottom: 10px;
+}
+
+.favorite-icon {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 1.5rem;
+  color: white;
+  -webkit-text-stroke: 2.5px #f97316;
+  cursor: pointer;
+  transition: transform 0.2s, color 0.2s, -webkit-text-stroke 0.2s;
+}
+
+.favorite-icon.active {
+  color: orange;
+  -webkit-text-stroke: 0;
+}
+
+.favorite-icon:hover {
+  transform: scale(1.2);
+}
+
+.content-item h4 {
+  color: #f97316;
+  margin-bottom: 8px;
+}
+
+.content-item p {
+  font-size: 0.9rem;
+  color: #555;
+  line-height: 1.4;
+  margin-bottom: 10px;
+}
+
+.bottom-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+}
+
+.content-btn {
+  background-color: #f97316;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.2s;
+}
+
+.content-btn:hover {
+  background-color: #fb923c;
+}
+
+.price {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #f97316;
+}
+
+/* ===== Responsive (มือถือ) ===== */
+@media (max-width: 768px) {
+
+  .hamburger {
+    display: block;
+  }
+
+  .menu {
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+    color: #f97316;
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 70%;
+    height: 100%;
+    padding-top: 80px;
+    padding-left: 20px;
+    transition: left 0.4s ease;
+    z-index: 1000;
+    box-shadow: 4px 0 15px rgba(0, 0, 0, 0.1);
+  }
+
+  .menu.active {
+    left: 0;
+  }
+
+  .menu li {
+    margin-bottom: 20px;
+  }
+
+  .menu li a {
+    color: #f97316;
+    font-size: 1.2rem;
+    font-weight: 600;
+  }
+
+  .menu li a:hover {
+    color: #fb923c;
+  }
+
+  .content-con {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px; /* ลดระยะห่างบนมือถือ */
+  }
+}
