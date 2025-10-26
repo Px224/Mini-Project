@@ -1,4 +1,5 @@
 /* ===== Reset & Base ===== */
+/* รีเซ็ตค่าพื้นฐานของทุก element ให้เหมือนกันทุกเบราว์เซอร์ */
 * {
   margin: 0;
   padding: 0;
@@ -6,12 +7,14 @@
   font-family: "Prompt", "Kanit", sans-serif;
 }
 
+/* ตั้งค่าพื้นหลังของหน้าเว็บและสีตัวอักษร */
 body {
   background-color: #fff7f0;
   color: #333;
 }
 
 /* ===== Navigation ===== */
+/* สไตล์ของแถบเมนูด้านบนของเว็บ */
 nav {
   background-color: #f97316;
   padding: 10px 0;
@@ -19,18 +22,20 @@ nav {
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
 
+/* ตั้งค่ากล่องกลางให้ไม่ชิดขอบหน้าจอ */
 .container {
   width: 85%;
   margin: 0 auto;
 }
 
+/* จัดเรียงโลโก้ เมนู และไอคอนให้อยู่ในบรรทัดเดียวกัน */
 .nav-con {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-/* Hamburger Menu */
+/* Hamburger เมนู (ใช้ในหน้าจอมือถือ) */
 .hamburger {
   display: none;
   font-size: 1.8rem;
@@ -39,14 +44,14 @@ nav {
   z-index: 1001;
 }
 
-/* Logo */
+/* โลโก้ของเว็บ */
 .logo a img {
   padding-top: 15%;
   width: 120px;
   height: auto;
 }
 
-/* Menu */
+/* กล่องเมนูหลัก */
 .menu {
   display: flex;
   list-style: none;
@@ -56,6 +61,7 @@ nav {
   transition: left 0.4s ease;
 }
 
+/* สไตล์ของลิงก์ในเมนู */
 .menu li a {
   color: white;
   text-decoration: none;
@@ -64,27 +70,31 @@ nav {
   transition: 0.2s;
 }
 
+/* เมื่อเอาเมาส์ไปชี้เมนูจะโปร่งลงเล็กน้อย */
 .menu li a:hover {
   opacity: 0.8;
 }
 
-/* Search + Favorite + Profile */
+/* ส่วน Search + Favorite + Profile */
 .search-favorite {
   display: flex;
   align-items: center;
   gap: 30px;
 }
 
+/* ส่วนกล่องค้นหา */
 .search-wrapper {
   position: relative;
 }
 
+/* ไอคอนแว่นขยาย */
 .search-icon {
   font-size: 1.5rem;
   color: white;
   cursor: pointer;
 }
 
+/* กล่อง input สำหรับพิมพ์ค้นหา (ซ่อนไว้ก่อน) */
 .search-input {
   position: absolute;
   right: -5px;
@@ -100,11 +110,13 @@ nav {
   z-index: 10;
 }
 
+/* เมื่อเอาเมาส์ไปชี้ search จะแสดงช่อง input */
 .search-wrapper:hover .search-input {
   width: 180px;
   opacity: 1;
 }
 
+/* ไอคอนหัวใจและโปรไฟล์ */
 .favorite-bar-icon, .profile-icon {
   font-size: 1.5rem;
   color: white;
@@ -112,32 +124,37 @@ nav {
   transition: color 0.2s;
 }
 
+/* เปลี่ยนสีหัวใจตอน hover */
 .favorite-bar-icon:hover {
   color: orange;
 }
 
+/* เปลี่ยนสีโปรไฟล์ตอน hover */
 .profile-icon:hover {
   color: #ffd580;
 }
 
-/* Content */
+/* ===== Content ===== */
+/* ส่วนแสดงสินค้าทั้งหมด */
 .content {
   padding: 50px 0;
 }
 
+/* หัวข้อหลักของหน้า */
 .content-title h3 {
   color: #f97316;
   font-size: 2.5rem;
   margin-bottom: 10px;
 }
 
+/* ข้อความจำนวนสินค้า */
 .item-count {
   color: #666;
   font-size: 1rem;
   margin-bottom: 30px;
 }
 
-/* Grid Products */
+/* Grid สำหรับจัดสินค้าทีละ 3 คอลัมน์ */
 .content-con {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -145,7 +162,7 @@ nav {
   justify-content: center;
 }
 
-/* Product Card */
+/* การ์ดสินค้าแต่ละชิ้น */
 .content-item {
   position: relative;
   background: white;
@@ -160,11 +177,13 @@ nav {
   justify-content: space-between;
 }
 
+/* เพิ่มเอฟเฟกต์ตอน hover สินค้า */
 .content-item:hover {
   transform: translateY(-5px);
   box-shadow: 0 6px 16px rgba(0,0,0,0.1);
 }
 
+/* รูปสินค้า */
 .content-item img {
   width: 100%;
   height: 250px;
@@ -173,6 +192,7 @@ nav {
   margin-bottom: 10px;
 }
 
+/* ไอคอนหัวใจบนการ์ด */
 .favorite-icon {
   position: absolute;
   top: 15px;
@@ -184,20 +204,24 @@ nav {
   transition: transform 0.2s, color 0.2s, -webkit-text-stroke 0.2s;
 }
 
+/* เมื่อกดหัวใจให้เปลี่ยนสีเป็นส้ม */
 .favorite-icon.active {
   color: orange;
   -webkit-text-stroke: 0;
 }
 
+/* เพิ่มเอฟเฟกต์หัวใจตอน hover */
 .favorite-icon:hover {
   transform: scale(1.2);
 }
 
+/* ชื่อสินค้า */
 .content-item h4 {
   color: #f97316;
   margin-bottom: 8px;
 }
 
+/* คำอธิบายสินค้า */
 .content-item p {
   font-size: 0.9rem;
   color: #555;
@@ -205,6 +229,7 @@ nav {
   margin-bottom: 10px;
 }
 
+/* แถวล่างสุดในแต่ละสินค้า */
 .bottom-row {
   display: flex;
   justify-content: space-between;
@@ -212,6 +237,7 @@ nav {
   margin-top: auto;
 }
 
+/* ปุ่มดูสินค้า */
 .content-btn {
   background-color: #f97316;
   color: white;
@@ -222,17 +248,20 @@ nav {
   transition: 0.2s;
 }
 
+/* เปลี่ยนสีปุ่มตอน hover */
 .content-btn:hover {
   background-color: #fb923c;
 }
 
+/* แสดงราคาสินค้า */
 .price {
   font-size: 1.1rem;
   font-weight: 600;
   color: #f97316;
 }
 
-/* Responsive */
+/* ===== Responsive (มือถือ) ===== */
+/* ปรับเลย์เอาท์เมื่อหน้าจอเล็กกว่า 768px */
 @media (max-width: 768px) {
   .hamburger {
     display: block;
@@ -272,7 +301,8 @@ nav {
   }
 }
 
-/* 404 Page */
+/* ===== 404 Page ===== */
+/* หน้าสำหรับกรณีที่ไม่พบเพจ */
 .notfound-container {
   display: flex;
   flex-direction: column;
@@ -284,16 +314,19 @@ nav {
   text-align: center;
 }
 
+/* ตัวเลข 404 ขนาดใหญ่ */
 .notfound-container h1 {
   font-size: 6rem;
   margin-bottom: 20px;
 }
 
+/* ข้อความอธิบายว่าไม่พบหน้า */
 .notfound-container p {
   font-size: 1.5rem;
   margin-bottom: 30px;
 }
 
+/* ปุ่มกลับหน้าแรก */
 .notfound-container a {
   text-decoration: none;
   color: white;
@@ -303,6 +336,7 @@ nav {
   transition: 0.2s;
 }
 
+/* สีปุ่มตอน hover */
 .notfound-container a:hover {
   background-color: #fb923c;
 }
