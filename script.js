@@ -73,3 +73,4 @@ item.innerHTML = `
     <span class="price">$${product.price}</span>
   </div>
 `;
+  
